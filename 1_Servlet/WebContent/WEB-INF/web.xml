@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <!-- 
+  *	web.xml 파일
+  * 배포서술자(DD, Deployment Descriptor)
+  * 해당 웹 애플리케이션의 기본적인 설정을 위해 작성하는 파일
+  * 서버 실행(start) 과 동시에 web.xml 문서를 제일 먼저 읽는다.
+  * web.xml 을 수정하지 않고도 개발 및 운영이 가능하다.
+  	단, 프로젝트 규모가 커질수록 Filter, Servlet, Wrapper 등등을 사용하게 되면
+  	직접 이 파일을 수정해야될거임.
+   -->
+  
+  
+  <display-name>1_Servlet</display-name>
+  <!--  welcom-file : 처음에 url로 이 애플리에키션 루트(별칭)로 요청시 제일 먼저 보게할 메인페이지 지정해 놓는공간 
+  						해당 index.html 문서를 어떤 경로에 만들어야되냐면 
+  						WebContent/index.html
+  				
+  -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

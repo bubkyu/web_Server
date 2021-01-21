@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Post방식으로 페이지 요청해보기</h1>
+	
+	<p>
+		특징1. post방식으로 요청하는 URL의 Body 영역에 데이터를 포함시켜서 요청<br>
+		-> 사용자가 입력한 값(데이터)들이 URL에 노출되지 않음 <br>
+		-> 보안유지가 가능함 <br>
+		-> 즉, 로그인 이나 회원 가입 같은 경우 post 방식이 적합하다<br><br>
+		
+		특징2. 전송하는 길이에 제한이 없음. -> 게시판 작성같은 경우 post 방식에 적합하다.<br>
+		
+		특징3. 전달되는 데이터가 URL에 노출되지 않아 즐겨찾기가 가능하긴 하나(기존에 봤던 응답화면을 볼 수 없을 것)	<br><br>
+		
+		특징4. (단점) 최대 요청 받는 시간(Time Out)이 존재해 페이지 요청, 기다리는 시간이 있다.
+	
+	</p>
+	
+	<h2>개인 정보 입력POST방식</h2>
+	
+	<p>당신의 개인 정보를 입력하세요. 입력 후 확인 버튼을 눌러주세요.</p>
+	
+	<!-- 
+		form 태그 내의 submit 제출 버튼 클릭시 action 속성에 작성된 값으로 url 요청된다.
+		즉, 이 요청을 받아주는 서블릿 관련 내용을 action 에 작성해야한다.
+		
+		* 주의 할점 : 서블릿 매핑값은 반드시 contextRoot(1_Servlet) 뒤에 작성되어여한다.
+		
+		action 에 작성된 값이 /로 시작되는 경우 			해당값이 	localhost:8888 뒤에 붙어진다. 		( 절대경로방식)
+		action 작성된 값이 / 없이 바로 시작되는 경우 		해당 값이 현재 이페이지가 보여지고 있는 url 경로로부터 뒤에 붙어짐.(상대경로방식)
+	
+	 -->
+	<form action="/1_Servlet/test2.do" method="post">
+		
+		<ul>
+			<li>
+				이름 : 
+				<input type="text" name="name">
+			</li>
+			
+			<li>
+				성별 : 
+				남자<input type="radio" name="gender" value="M">
+				여자<input type="radio" name="gender" value="F">
+			</li>
+			
+			<li>
+				나이 :
+				<input type="number" name="age"> 
+			</li>
+			
+			<li>
+				사는 도시 : 
+				<select name="city">
+					<option value="서울">서울</option>
+					<option value="경기도">경기도</option>
+					<option value="경상도">경상도</option>
+					<option value="제주도">제주도</option>
+					<option value="전라도">전라도</option>
+					<option value="강원도">강원도</option>
+					<option value="충청도">충청도</option>
+				</select>
+			</li>
+			
+			<li>
+				키 : 
+				<input type="range" name="height" min="140" max="200" step="1">
+			</li>
+			
+			<li>
+				좋아하는 음식(모두 고르시오) : 
+				한식<input type="checkbox" name="food" value="한식">
+				중식<input type="checkbox" name="food" value="중식">
+				일식<input type="checkbox" name="food" value="일식">
+				양식<input type="checkbox" name="food" value="양식">
+				분식<input type="checkbox" name="food" value="분식">
+			</li>
+			
+		</ul>
+		
+		<br>
+
+		<input type="submit" value="확인">
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
